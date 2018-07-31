@@ -9,10 +9,16 @@ namespace MvGuideApp.ViewModels
 {
 	public class OrderVM
 	{
+		//public MyICommand DeleteCommand { get; set; }
+		AddCommand m_addCommand;
+		public AddCommand AddCmd { get { return m_addCommand; } }
+
 		int m_num;
 
 		public OrderVM()
 		{
+			m_addCommand = new AddCommand(this);
+
 			Orders = new List<Order>();
 			m_num = 1;
 			Orders.Add(new Order(m_num.ToString(),

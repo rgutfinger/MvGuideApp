@@ -9,15 +9,21 @@ namespace MvGuideApp.ViewModels
 {
 	public class AddCommand : ICommand
 	{
-		public bool CanExecute(object parameter)
+		OrderVM m_orderVM;
+
+		public AddCommand(OrderVM orderVM)
 		{
+			m_orderVM = orderVM;
+		}
+
+		public bool CanExecute(object parameter)
+		{	// selection based
 			return true;
 		}
 
 		public void Execute(object parameter)
 		{
-			// how get to VM? .Add
-			
+			m_orderVM.Add();			
 		}
 
 		public event EventHandler CanExecuteChanged;
