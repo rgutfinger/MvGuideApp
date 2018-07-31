@@ -54,6 +54,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Util\DataGridEx.cs" />
+    <Compile Include="Util\ExceptionEx.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,6 +1,7 @@
 ﻿using MvGuideApp.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Util;
+
 namespace MvGuideApp
 {
 	/// <summary>
@@ -25,7 +28,25 @@ namespace MvGuideApp
 		{
 			InitializeComponent();
 
-			DataContext = new OrderVM();
+			DataContext = new OrderVM(); // define ViewModel class where path binding is
+
+			if (!DesignerProperties.GetIsInDesignMode(this))
+			{
+				this.Loaded += OnLoaded; ;
+			}
+		}
+
+		private void OnLoaded(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+
+			}
+			catch (Exception ex)
+			{
+				ex.DisplayError();
+			}
 		}
 	}
+
 }
