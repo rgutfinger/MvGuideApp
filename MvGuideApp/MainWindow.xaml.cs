@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvGuideApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace MvGuideApp
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			DataContext = new OrderVM();
 		}
 	}
 }
