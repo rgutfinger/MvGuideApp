@@ -53,13 +53,9 @@ namespace MvGuideApp.ViewModels
 
 		public void Add()
 		{
-			//need model/prop Change...
-
 			m_num++;
 			Orders.Add(new Order(m_num.ToString(),
 				string.Format("test {0}", m_num)));
-
-			// onPropertyChange???
 		}
 	}
 }

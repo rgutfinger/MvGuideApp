@@ -7,6 +7,9 @@ using System.Windows.Input;
 
 namespace MvGuideApp.ViewModels
 {
+
+	// **********next use the cmd base class
+
 	public class AddCommand : ICommand
 	{
 		OrderVM m_orderVM;
@@ -26,8 +29,11 @@ namespace MvGuideApp.ViewModels
 			m_orderVM.Add();			
 		}
 
+
+		//**to base
 		public event EventHandler CanExecuteChanged;
 
+		//**to base
 		public void RaiseCanExecuteChanged()
 		{
 			CanExecuteChanged(this, EventArgs.Empty);
