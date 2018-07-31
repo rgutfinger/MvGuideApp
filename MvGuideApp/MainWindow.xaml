@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid ItemsSource="{Binding Path=Orders}" />
+        <StackPanel Orientation="Vertical">
+            <Button Content="_Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"
+                    Command="{Binding Path=AddCommand}"/>
+            <DataGrid ItemsSource="{Binding Path=Orders}" />
+        </StackPanel>
     </Grid>
 </Window>

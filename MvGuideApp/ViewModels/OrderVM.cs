@@ -9,14 +9,28 @@ namespace MvGuideApp.ViewModels
 {
 	public class OrderVM
 	{
-		static List<Order> s_orders=new List<Order>();
+		int m_num;
 
 		public OrderVM()
 		{
-			s_orders.Add(new Order("1", "test 1"));
-			s_orders.Add(new Order("2", "test 2"));
+			Orders = new List<Order>();
+			m_num = 1;
+			Orders.Add(new Order(m_num.ToString(),
+				string.Format("test {0}",m_num)));
+			m_num++;
+			Orders.Add(new Order(m_num.ToString(),
+				string.Format("test {0}", m_num)));
 		}
 
-		public List<Order> Orders { get { return s_orders; } }
+		public List<Order> Orders { get; }
+
+		public void Add()
+		{
+			m_num++;
+			Orders.Add(new Order(m_num.ToString(),
+				string.Format("test {0}", m_num)));
+
+			// onPropertyChange???
+		}
 	}
 }
