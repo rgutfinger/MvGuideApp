@@ -1,6 +1,7 @@
 ﻿using MvGuideApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace MvGuideApp.ViewModels
 		{
 			m_addCommand = new AddCommand(this);
 
-			Orders = new List<Order>();
+			Orders = new ObservableCollection<Order>();
 			m_num = 1;
 			Orders.Add(new Order(m_num.ToString(),
 				string.Format("test {0}",m_num)));
@@ -28,10 +29,12 @@ namespace MvGuideApp.ViewModels
 				string.Format("test {0}", m_num)));
 		}
 
-		public List<Order> Orders { get; }
+		public ObservableCollection<Order> Orders { get; }
 
 		public void Add()
 		{
+			//need model/prop Change...
+
 			m_num++;
 			Orders.Add(new Order(m_num.ToString(),
 				string.Format("test {0}", m_num)));
