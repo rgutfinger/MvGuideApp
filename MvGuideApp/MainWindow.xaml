@@ -10,7 +10,10 @@
         <StackPanel Orientation="Vertical">
             <Button Content="_Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"
                     Command="{Binding Path=AddCmd}"/>
-            <DataGrid ItemsSource="{Binding Path=Orders}" />
+            <Button Content="_Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="0,10,0,0"
+                    Command="{Binding Path=DeleteCmd}"/>
+            <DataGrid ItemsSource="{Binding Path=Orders}" SelectedItem="{Binding SelectedOrder}"  Margin="0,10,0,0"
+                      />
         </StackPanel>
     </Grid>
 </Window>

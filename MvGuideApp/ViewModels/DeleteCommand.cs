@@ -7,23 +7,23 @@ using System.Windows.Input;
 
 namespace MvGuideApp.ViewModels
 {
-	public class AddCommand : ICommand
+	public class DeleteCommand : ICommand
 	{
 		OrderVM m_orderVM;
 
-		public AddCommand(OrderVM orderVM)
+		public DeleteCommand(OrderVM orderVM)
 		{
 			m_orderVM = orderVM;
 		}
 
 		public bool CanExecute(object parameter)
 		{	// selection based
-			return true;
+			return m_orderVM.SelectedOrder!=null;
 		}
 
 		public void Execute(object parameter)
 		{
-			m_orderVM.Add();			
+			m_orderVM.DeleteSelected();			
 		}
 
 		public event EventHandler CanExecuteChanged;
