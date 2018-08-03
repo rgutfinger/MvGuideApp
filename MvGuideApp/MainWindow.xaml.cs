@@ -32,7 +32,7 @@ namespace MvGuideApp
 
 			if (!DesignerProperties.GetIsInDesignMode(this))
 			{
-				this.Loaded += OnLoaded; ;
+				this.Loaded += OnLoaded;
 			}
 		}
 
