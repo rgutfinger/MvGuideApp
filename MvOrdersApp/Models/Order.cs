@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvGuideApp.Models
+namespace MvOrdersApp.Models
 {
 	public class Order
 	{

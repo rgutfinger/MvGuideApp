@@ -5,29 +5,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MvGuideApp.ViewModels
+namespace MvOrdersApp.ViewModels
 {
-
-	public class AddCommand : CommandBase
+	public class DeleteCommand : CommandBase
 	{
 		OrderVM m_orderVM;
 
-		public AddCommand(OrderVM orderVM)
+		public DeleteCommand(OrderVM orderVM)
 		{
 			m_orderVM = orderVM;
 		}
 
 		public override bool CanExecute(object parameter)
-		{	// always available
-			return true;
+		{	// selection based
+			return m_orderVM.SelectedOrder!=null;
 		}
 
 		public override void Execute(object parameter)
 		{
-			m_orderVM.Add();			
+			m_orderVM.DeleteSelected();			
 		}
-
-
 	}
 
 }

@@ -1,4 +1,4 @@
-﻿using MvGuideApp.ViewModels;
+﻿using MvOrdersApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 using Util;
 
-namespace MvGuideApp
+namespace MvOrdersApp
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml

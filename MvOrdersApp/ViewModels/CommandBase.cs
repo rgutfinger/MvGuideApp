@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MvGuideApp.ViewModels
+namespace MvOrdersApp.ViewModels
 {
 	public abstract class CommandBase : ICommand
 	{
