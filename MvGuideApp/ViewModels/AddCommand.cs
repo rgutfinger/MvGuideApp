@@ -8,9 +8,7 @@ using System.Windows.Input;
 namespace MvGuideApp.ViewModels
 {
 
-	// **********next use the cmd base class
-
-	public class AddCommand : ICommand
+	public class AddCommand : CommandBase
 	{
 		OrderVM m_orderVM;
 
@@ -19,25 +17,17 @@ namespace MvGuideApp.ViewModels
 			m_orderVM = orderVM;
 		}
 
-		public bool CanExecute(object parameter)
-		{	// selection based
+		public override bool CanExecute(object parameter)
+		{	// always available
 			return true;
 		}
 
-		public void Execute(object parameter)
+		public override void Execute(object parameter)
 		{
 			m_orderVM.Add();			
 		}
 
 
-		//**to base
-		public event EventHandler CanExecuteChanged;
-
-		//**to base
-		public void RaiseCanExecuteChanged()
-		{
-			CanExecuteChanged(this, EventArgs.Empty);
-		}
 	}
 
 }

@@ -56,6 +56,7 @@
     </ApplicationDefinition>
     <Compile Include="Util\DataGridEx.cs" />
     <Compile Include="Util\ExceptionEx.cs" />
+    <Compile Include="ViewModels\CommandBase.cs" />
     <Compile Include="ViewModels\DeleteCommand.cs" />
     <Compile Include="ViewModels\AddCommand.cs" />
     <Compile Include="ViewModels\OrderVM.cs" />

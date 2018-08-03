@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace MvGuideApp.ViewModels
 {
-	public class DeleteCommand : ICommand
+	public class DeleteCommand : CommandBase
 	{
 		OrderVM m_orderVM;
 
@@ -16,21 +16,14 @@ namespace MvGuideApp.ViewModels
 			m_orderVM = orderVM;
 		}
 
-		public bool CanExecute(object parameter)
+		public override bool CanExecute(object parameter)
 		{	// selection based
 			return m_orderVM.SelectedOrder!=null;
 		}
 
-		public void Execute(object parameter)
+		public override void Execute(object parameter)
 		{
 			m_orderVM.DeleteSelected();			
-		}
-
-		public event EventHandler CanExecuteChanged;
-
-		public void RaiseCanExecuteChanged()
-		{
-			CanExecuteChanged(this, EventArgs.Empty);
 		}
 	}
 
