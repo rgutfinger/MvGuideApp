@@ -16,6 +16,8 @@ namespace MvOrdersApp.ViewModels
 		public AddCommand AddCmd { get { return m_addCommand; } }
 		public DeleteCommand DeleteCmd { get { return m_deleteCommand; } }
 
+		private Order m_selectedOrder;
+		string m_desc;
 
 		int m_num;
 
@@ -33,13 +35,21 @@ namespace MvOrdersApp.ViewModels
 				string.Format("test {0}", m_num)));
 		}
 
-		private Order _selectedOrder;
-
 		public Order SelectedOrder
 		{
-			get { return _selectedOrder; }
-			set { _selectedOrder = value;
+			get { return m_selectedOrder; }
+			set { m_selectedOrder = value;
 				m_deleteCommand.RaiseCanExecuteChanged(); 
+			}
+		}
+
+		public string Desc
+		{
+			get { return m_desc; }
+			set
+			{
+				m_desc = value;
+				m_addCommand.RaiseCanExecuteChanged();
 			}
 		}
 
@@ -54,8 +64,7 @@ namespace MvOrdersApp.ViewModels
 		public void Add()
 		{
 			m_num++;
-			Orders.Add(new Order(m_num.ToString(),
-				string.Format("test {0}", m_num)));
+			Orders.Add(new Order(m_num.ToString(),m_desc));
 		}
 	}
 }

@@ -18,8 +18,9 @@ namespace MvOrdersApp.ViewModels
 		}
 
 		public override bool CanExecute(object parameter)
-		{	// always available
-			return true;
+		{
+			return !string.IsNullOrWhiteSpace(m_orderVM.Desc);
+			//return true;
 		}
 
 		public override void Execute(object parameter)
