@@ -20,14 +20,19 @@
                         <Image Source="Images/Add.png"  Height="16" Margin="3,0,0,0" />
                     </StackPanel>
                 </Button>
-            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,0,0,0" ToolTip="[Alt+D]"
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,0,0,0" ToolTip="[Alt+D]"
                     Command="{Binding Path=DeleteCmd}">
                     <StackPanel Orientation="Horizontal">
                         <AccessText Text="_Delete"/>
                         <Image Source="Images/Delete.png"  Height="16" Margin="3,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Label Content="Description" Margin="60,0,0,0" ToolTip="Type to edit and tab out"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Edit Selected" FontWeight="Bold" Margin="20,10,0,0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Description" Margin="20,0,0,0" ToolTip="Type to edit and tab out"/>
                 <TextBox Height="22" TextWrapping="Wrap"  Width="120" Margin="0,0,0,0"  ToolTip="Type to edit and tab out"
                          Text="{Binding ElementName=m_grid, Path=SelectedItem.Desc}"/>
                 <Label Content="DeliveryDate"  ToolTip="Type to edit and tab out" />
