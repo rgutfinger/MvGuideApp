@@ -10,8 +10,8 @@
     <Grid>
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
-                <Label HorizontalAlignment="Left" Content="Description" Margin="0,0,0,0" ToolTip="Type to edit and tab out"/>
-                <TextBox Name="m_desc" Height="22" TextWrapping="Wrap"  Width="120" Margin="0,0,0,0"  ToolTip="Type to edit and tab out"
+                <Label HorizontalAlignment="Left" Content="Description" Margin="0,0,0,0" ToolTip="New order description" />
+                <TextBox Name="m_desc" Height="22" TextWrapping="Wrap"  Width="120" Margin="0,0,0,0"  ToolTip="New order description"
                          Text="{Binding Path=Desc}"/>
                 <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" ToolTip="[Alt+A]" Margin="20,0,0,0"
                     Command="{Binding Path=AddCmd}" >
@@ -20,16 +20,17 @@
                         <Image Source="Images/Add.png"  Height="16" Margin="3,0,0,0" />
                     </StackPanel>
                 </Button>
-                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="10,0,0,0" ToolTip="[Alt+D]"
+                
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Edit Selected" FontWeight="Bold" Margin="20,10,0,0"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="125,10,0,0" ToolTip="Delete selected item [Alt+D]"
                     Command="{Binding Path=DeleteCmd}">
                     <StackPanel Orientation="Horizontal">
                         <AccessText Text="_Delete"/>
                         <Image Source="Images/Delete.png"  Height="16" Margin="3,0,0,0" />
                     </StackPanel>
                 </Button>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="Edit Selected" FontWeight="Bold" Margin="20,10,0,0"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Description" Margin="20,0,0,0" ToolTip="Type to edit and tab out"/>
